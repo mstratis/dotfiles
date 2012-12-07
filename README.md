@@ -8,7 +8,7 @@ Terminal themes. Right now it's just an exported OS X Homebrew theme. But now I'
 
 ##LICENSE
 
-Do whatever you want with the files. Just don't sue me. Or spam me. Or spam me. Or in any way negatively impact my life.
+Do whatever you want with the files. Just don't sue me.  Or spam me. Or in any way negatively impact my life.
 
 ##A Matt Hodges project
 
