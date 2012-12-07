@@ -6,5 +6,5 @@
 [alias]
 	alias = config --get-regexp 'alias.*'
 	lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset %n' --abbrev-commit
-	wtf = !ruby  ~/bin/git-wtf
+	wtf = !ruby  ~/bin/git-wtf -r
 	updatetags = !git tag -l | xargs git tag -d && git fetch
