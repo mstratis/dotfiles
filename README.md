@@ -2,10 +2,6 @@
 
 These are my dotfiles. Eventually, I'll come up with a more elegant way to do this.
 
-##Themes
-
-Terminal themes. Right now it's just an exported OS X Homebrew theme. But now I've got it. Stickin' it to the man, man.
-
 ##A Matt Hodges project
 
 Want to know how to do dotfiles correctly? Check out out [Zach Holman's dotfiles](http://github.com/holman/dotfiles).
