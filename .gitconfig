@@ -1,0 +1,6 @@
+[user]
+	name = Matt Hodges
+	email = hodgesmr1@gmail.com
+[alias]
+	alias = config --get-regexp 'alias.*'
+	lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset %n' --abbrev-commit
