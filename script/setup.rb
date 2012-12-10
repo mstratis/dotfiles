@@ -23,12 +23,33 @@ def read_git_credentials
 end
 
 # Overwrite git settings
+def overwrite_git_settings
+  File.open('.gitconfig', 'r+') do |f|
+    out = ""
+    f.each do |line|
+      unless @git_name.nil? || @git_name.eql? ""
+        out << line.gsub('Matt Hodges', @git_name)
+      end
+      unless @git_email.nil? || @git_email.eql? ""
+        out << line.gsub('hodgesmr1@gmail.com', @git_email)
+      end
+    end
+    f.pos = 0
+    f.print out
+    f.truncate(f.pos)
+  end
+end
 
 # Copy over dotfiles
 # Don't forget to add new files here as necessary
-def overwrite
+def copy_files
   FileUtils.cp '.bash_profile', '~/.bash_profile'
   FileUtils.cp '.gitconfig', '~/.gitconfig'
   FileUtils.cp '.gitignore_global', '~/.gitignore_global'
   FileUtils.cp_r 'bin', '~/', :remove_destination => true
 end
+
+# do all the magic
+read_git_credentials
+overwrite_git_settings
+copy_files
