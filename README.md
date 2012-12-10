@@ -1,6 +1,6 @@
 #Dotfiles, bro
 
-These are my dotfiles. Eventually, I'll come up with a more elegant way to do this. Many of these settings work best with the OS X Homebrew terminal theme.
+These are my dotfiles. Many of these settings work best with the OS X Homebrew terminal theme.
 
 ##Setup
 
