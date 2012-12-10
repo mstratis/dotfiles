@@ -53,10 +53,10 @@ end
 # Copy over dotfiles
 # Don't forget to add new files here as necessary
 def copy_files
-  FileUtils.cp '.bash_profile', '~/.bash_profile'
-  FileUtils.cp '.gitconfig', '~/.gitconfig'
-  FileUtils.cp '.gitignore_global', '~/.gitignore_global'
-  FileUtils.cp_r 'bin', '~/', :remove_destination => true
+  FileUtils.cp '.bash_profile', ENV['HOME']+'/.bash_profile'
+  FileUtils.cp '.gitconfig', ENV['HOME']+'/.gitconfig'
+  FileUtils.cp '.gitignore_global', ENV['HOME']+'/.gitignore_global'
+  FileUtils.cp_r 'bin', ENV['HOME']+'/, :remove_destination => true
 end
 
 # do all the magic
