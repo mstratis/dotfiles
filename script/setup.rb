@@ -5,9 +5,10 @@
 # Warning: this script is destructive. It will overwrite current dotfiles
 
 require 'fileutils'
+require 'tempfile'
 
-@git_name = nil;
-@git_email = "nil;
+@git_name = nil
+@git_email = nil
 
 # Get the git settings
 def read_git_credentials
@@ -27,11 +28,20 @@ def overwrite_git_settings
   File.open('.gitconfig', 'r+') do |f|
     out = ""
     f.each do |line|
-      unless @git_name.nil? || @git_name.eql? ""
-        out << line.gsub('Matt Hodges', @git_name)
-      end
-      unless @git_email.nil? || @git_email.eql? ""
-        out << line.gsub('hodgesmr1@gmail.com', @git_email)
+      if line.include? "name = "
+        if @git_name.nil? || @git_name.empty?
+          out << line
+        else
+          out << "\tname = " + @git_name + "\n"
+        end
+      elsif line.include? "email = "
+        if @git_email.nil? || @git_email.empty?
+          out << line
+        else
+          out << "\temail = " + @git_email + "\n"
+        end
+      else
+        out << line
       end
     end
     f.pos = 0
