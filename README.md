@@ -20,7 +20,7 @@ Since you're not me, you probably want to update the name and email values in .g
 
 ##Updates
 
-If you want to add or update your dotfiles, do so in `~/.dotfiles` and then rerun the script. This will make sure everything stays synced.
+If you want to add or update your dotfiles, do so in `~/.dotfiles` and then rerun the setup script. If you add new files, don't forget to add them to the script. This will make sure everything stays synced.
 
 ##A Matt Hodges project
 
