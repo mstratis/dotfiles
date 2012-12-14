@@ -18,6 +18,10 @@ This will copy the dotfiles into your home directory so that everything is set u
 
 Since you're not me, you probably want to update the name and email values in .gitconfig. If you run the setup script, it will guide you through that.
 
+##Updates
+
+If you want to add or update your dotfiles, do so in ~/.dotfiles and then rerun the script. This will make sure everything stays synced.
+
 ##A Matt Hodges project
 
 Made by [@hodgesmr](http://twitter.com/hodgesmr).
