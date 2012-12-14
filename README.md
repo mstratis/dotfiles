@@ -1,4 +1,4 @@
-#Dotfiles, bro
+#Dotfiles
 
 These are my dotfiles. Many of these settings work best with the OS X Homebrew terminal theme.
 
