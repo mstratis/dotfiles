@@ -5,7 +5,6 @@
 # Warning: this script is destructive. It will overwrite current dotfiles
 
 require 'fileutils'
-require 'tempfile'
 
 @git_name = nil
 @git_email = nil
