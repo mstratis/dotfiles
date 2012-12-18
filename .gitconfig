@@ -11,5 +11,8 @@
 	wtf = !ruby  ~/bin/git-wtf -r
 	updatetags = !git tag -l | xargs git tag -d && git fetch
 	nmit = !sh -c \"git branch -a | grep -vF \\\"$(git branch -a --contains HEAD)\\\"\" #shows branches that don't have current branch merged in to 
+	new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
+        today = log --since='8am' --graph --pretty=format:\"%h %ad | %s%d [%an]\" --abbrev-commit --date=relative
+	thisweek = log --since='last monday' --graph --pretty=format:\"%h %ad | %s%d [%an]\" --date=short
 [color]
 	ui = true
