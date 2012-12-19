@@ -8,11 +8,11 @@
 [alias]
 	alias = config --get-regexp 'alias.*'
 	lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset %n' --abbrev-commit
+	new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
+    today = log --since='8am' --graph --pretty=format:\"%h %ad | %s%d [%an]\" --abbrev-commit --date=relative
+	thisweek = log --since='last monday' --graph --pretty=format:\"%h %ad | %s%d [%an]\" --date=short
 	wtf = !ruby  ~/bin/git-wtf -r
 	updatetags = !git tag -l | xargs git tag -d && git fetch
-	nmit = !sh -c \"git branch -a | grep -vF \\\"$(git branch -a --contains HEAD)\\\"\" #shows branches that don't have current branch merged in to 
-	new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
-        today = log --since='8am' --graph --pretty=format:\"%h %ad | %s%d [%an]\" --abbrev-commit --date=relative
-	thisweek = log --since='last monday' --graph --pretty=format:\"%h %ad | %s%d [%an]\" --date=short
+	doesnthave = !sh -c \"git branch -a | grep -vF \\\"$(git branch -a --contains HEAD)\\\"\" #shows branches that don't have current branch merged in to 
 [color]
 	ui = true
