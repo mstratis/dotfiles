@@ -1,16 +1,16 @@
 # You probably want to change the [user] section here since you are not me.
 
 [user]
-    name = Matt Hodges
-    email = hodgesmr1@gmail.com
+	name = Matt Hodges
+	email = hodgesmr1@gmail.com
 [core]
     excludesfile = ~/.gitignore_global
 [alias]
     alias = config --get-regexp 'alias.*'
     lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset %n' --abbrev-commit
     new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
-    today = log --since='8am' --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset %n' --abbrev-commit
-    thisweek = log --since='last monday' --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset %n' --abbrev-commit
+    today = log --since='8am' --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset %n' --abbrev-commit
+    thisweek = log --since='last monday' --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset %n' --abbrev-commit
     wtf = !ruby  ~/bin/git-wtf -r
     updatetags = !git tag -l | xargs git tag -d && git fetch
     doesnthave = !sh -c \"git branch -a | grep -vF \\\"$(git branch -a --contains HEAD)\\\"\" #shows branches that don't have current branch merged in to 
