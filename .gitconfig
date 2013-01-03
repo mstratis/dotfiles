@@ -14,6 +14,6 @@
     wtf = !ruby  ~/bin/git-wtf -r
     updatetags = !git tag -l | xargs git tag -d && git fetch
     doesnthave = !sh -c \"git branch -a | grep -vF \\\"$(git branch -a --contains HEAD)\\\"\" #shows branches that don't have current branch merged in to 
-    pullall = !git pull --rebase &&  B=$(git rev-parse --abbrev-ref HEAD) && git branch -r | sed -e 's/origin\\///g' | grep -v $B | xargs -L 1 -I %  sh -c "'{ git checkout %; git pull --rebase; }'" && git checkout $B
+    pullall = !git pull --rebase && B=$(git rev-parse --abbrev-ref HEAD) && git branch -r | sed -e 's/origin\\///g' | grep -v $B | grep -v HEAD | xargs -L 1 -I %  sh -c "'{ git checkout %; git pull --rebase; }'" && git checkout $B
 [color]
     ui = true
