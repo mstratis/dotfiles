@@ -6,14 +6,32 @@
 [core]
     excludesfile = ~/.gitignore_global
 [alias]
-    alias = config --get-regexp 'alias.*'
-    lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset %n' --abbrev-commit
-    new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
-    today = log --since='8am' --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset %n' --abbrev-commit
-    thisweek = log --since='last monday' --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset %n' --abbrev-commit
-    wtf = !ruby  ~/bin/git-wtf -r
-    updatetags = !git tag -l | xargs git tag -d && git fetch
-    doesnthave = !sh -c \"git branch -a | grep -vF \\\"$(git branch -a --contains HEAD)\\\"\" #shows branches that don't have current branch merged in to 
-    pullall = !git pull --rebase && B=$(git rev-parse --abbrev-ref HEAD) && git branch -r | sed -e 's/origin\\///g' | grep -v $B | grep -v HEAD | xargs -L 1 -I %  sh -c "'{ git checkout %; git pull --rebase; }'" && git checkout $B
+
+  # shows all of the git aliases
+  alias = config --get-regexp 'alias.*'
+  
+  # a prettier log
+  lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset %n' --abbrev-commit
+
+  # shows the new commits after last action
+  new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
+
+  # shows the git commits from today
+  today = log --since='8am' --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset %n' --abbrev-commit
+
+  # shows the git commits from this week
+  thisweek = log --since='last monday' --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset %n' --abbrev-commit
+
+  # shows git branch relationship information
+  wtf = !ruby  ~/bin/git-wtf -r
+
+  # makes local tags match remote
+  updatetags = !git tag -l | xargs git tag -d && git fetch
+
+  # Shows branches that don't have current branch merged in to
+  doesnthave = !sh -c \"git branch -a | grep -vF \\\"$(git branch -a --contains HEAD)\\\"\" 
+
+  # pull-rebase all remote branches, even if not previously tracked
+  pullall = !git pull --rebase && B=$(git rev-parse --abbrev-ref HEAD) && git branch -r | sed -e 's/origin\\///g' | grep -v $B | grep -v HEAD | xargs -L 1 -I %  sh -c "'{ git checkout %; git pull --rebase; }'" && git checkout $B
 [color]
     ui = true
