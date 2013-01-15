@@ -52,11 +52,16 @@ end
 # Copy over dotfiles
 # Don't forget to add new files here as necessary
 def copy_files
-  FileUtils.cp '.bash_profile', ENV['HOME']+'/.bash_profile'
-  FileUtils.cp '.gitconfig', ENV['HOME']+'/.gitconfig'
-  FileUtils.cp '.gitignore_global', ENV['HOME']+'/.gitignore_global'
-  FileUtils.cp '.vimrc', ENV['HOME']+'/.vimrc'
-  FileUtils.cp_r 'bin', ENV['HOME']+'/', :remove_destination => true
+#  FileUtils.cp '.bash_profile', ENV['HOME']+'/.bash_profile'
+#  FileUtils.cp '.gitconfig', ENV['HOME']+'/.gitconfig'
+#  FileUtils.cp '.gitignore_global', ENV['HOME']+'/.gitignore_global'
+#  FileUtils.cp '.vimrc', ENV['HOME']+'/.vimrc'
+#  FileUtils.cp_r 'bin', ENV['HOME']+'/', :remove_destination => true
+  FileUtils.ln_s '.bash_profile', ENV['HOME']+'/.bash_profile', :force => true
+  FileUtils.ln_s '.gitconfig', ENV['HOME']+'/.gitconfig', :force => true
+  FileUtils.ln_s '.gitignore_global', ENV['HOME']+'/.gitignore_global', :forece => true
+  FileUtils.ln_s '.vimrc', ENV['HOME']+'/.vimrc', :force => true
+  FileUtils.ln_s 'bin', ENV['HOME']+'/bin', :force => true
 end
 
 # do all the magic
