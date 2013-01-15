@@ -59,7 +59,7 @@ def copy_files
 #  FileUtils.cp_r 'bin', ENV['HOME']+'/', :remove_destination => true
   FileUtils.ln_s '.bash_profile', ENV['HOME']+'/.bash_profile', :force => true
   FileUtils.ln_s '.gitconfig', ENV['HOME']+'/.gitconfig', :force => true
-  FileUtils.ln_s '.gitignore_global', ENV['HOME']+'/.gitignore_global', :forece => true
+  FileUtils.ln_s '.gitignore_global', ENV['HOME']+'/.gitignore_global', :force => true
   FileUtils.ln_s '.vimrc', ENV['HOME']+'/.vimrc', :force => true
   FileUtils.ln_s 'bin', ENV['HOME']+'/bin', :force => true
 end
