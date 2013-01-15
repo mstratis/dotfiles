@@ -49,22 +49,20 @@ def overwrite_git_settings
   end
 end
 
-# Copy over dotfiles
+# Link the files
 # Don't forget to add new files here as necessary
-def copy_files
-#  FileUtils.cp '.bash_profile', ENV['HOME']+'/.bash_profile'
-#  FileUtils.cp '.gitconfig', ENV['HOME']+'/.gitconfig'
-#  FileUtils.cp '.gitignore_global', ENV['HOME']+'/.gitignore_global'
-#  FileUtils.cp '.vimrc', ENV['HOME']+'/.vimrc'
-#  FileUtils.cp_r 'bin', ENV['HOME']+'/', :remove_destination => true
-  FileUtils.ln_s '.bash_profile', ENV['HOME']+'/.bash_profile', :force => true
-  FileUtils.ln_s '.gitconfig', ENV['HOME']+'/.gitconfig', :force => true
-  FileUtils.ln_s '.gitignore_global', ENV['HOME']+'/.gitignore_global', :force => true
-  FileUtils.ln_s '.vimrc', ENV['HOME']+'/.vimrc', :force => true
-  FileUtils.ln_s 'bin', ENV['HOME']+'/bin', :force => true
+def link_files
+  FileUtils.ln_s ENV['HOME']+'/.dotfiles/.bash_profile', ENV['HOME']+'/.bash_profile', :force => true
+  FileUtils.ln_s ENV['HOME']+'/.dotfiles/.gitconfig', ENV['HOME']+'/.gitconfig', :force => true
+  FileUtils.ln_s ENV['HOME']+'/.dotfiles/.gitignore_global', ENV['HOME']+'/.gitignore_global', :force => true
+  FileUtils.ln_s ENV['HOME']+'/.dotfiles/.vimrc', ENV['HOME']+'/.vimrc', :force => true
+  
+  # directories are a bitch...
+  FileUtils.remove_dir ENV['HOME']+'/bin', true
+  FileUtils.ln_s ENV['HOME']+'/.dotfiles/bin', ENV['HOME']+'/', :force => true
 end
 
 # do all the magic
 read_git_credentials
 overwrite_git_settings
-copy_files
+link_files
