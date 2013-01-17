@@ -1,0 +1,5 @@
+# Creates the rd command for use when debugging in LLDB. It prints a recursive description of any view object
+command regex rd 's/^[[:space:]]*$/po [[[UIApplication sharedApplication] keyWindow] recursiveDescription]/' 's/^(.+)$/po [%1 recursiveDescription]/'
+
+# Creates the sp command for use when debugging in LLDB. It shows the contents of a CGPathRef
+command regex sp 's/(.+)/print (void)CGPathPrint(%1, 0)/'
