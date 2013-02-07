@@ -14,10 +14,10 @@
   lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset %n' --abbrev-commit
 
   # shows the new commits after last action
-  new = !sh -c 'git lg $1@{1}..$1@{0} "$@"'
+  new = !git lg $1@{1}..$1@{0} "$@"
 
   # shows the git commits from today
-  today = !sh -c 'git lg --since="8am"' 
+  today = !git lg --since="8am" 
 
   # shows the git commits from this week
   thisweek = !git lg --since='last monday'
