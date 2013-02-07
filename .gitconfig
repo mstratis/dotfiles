@@ -20,7 +20,7 @@
   today = !sh -c 'git lg --since="8am"' 
 
   # shows the git commits from this week
-  thisweek = log --since='last monday' --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset %n' --abbrev-commit
+  thisweek = !git lg --since='last monday'
 
   # shows git branch relationship information
   wtf = !ruby  ~/bin/git-wtf -r
