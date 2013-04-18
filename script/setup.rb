@@ -56,6 +56,7 @@ def link_files
   FileUtils.ln_s ENV['HOME']+'/.dotfiles/.gitconfig', ENV['HOME']+'/.gitconfig', :force => true
   FileUtils.ln_s ENV['HOME']+'/.dotfiles/.gitignore_global', ENV['HOME']+'/.gitignore_global', :force => true
   FileUtils.ln_s ENV['HOME']+'/.dotfiles/.vimrc', ENV['HOME']+'/.vimrc', :force => true
+  FileUtils.ln_s ENV['HOME']+'/.dotfiles/.inputrc', ENV['HOME']+'/.inputrc', :force => true
   FileUtils.ln_s ENV['HOME']+'/.dotfiles/.lldbinit', ENV['HOME']+'/.lldbinit', :force => true
 
   # directories are a bitch...
