@@ -25,6 +25,9 @@
   # shows git branch relationship information
   wtf = !ruby  ~/bin/git-wtf -r
 
+  # shows the most common words from commit log
+  words = !ruby ~/bin/git-words
+
   # makes local tags match remote
   updatetags = !git tag -l | xargs git tag -d && git fetch
 
