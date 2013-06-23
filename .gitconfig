@@ -38,3 +38,20 @@
   pullall = !git pull --rebase && B=$(git rev-parse --abbrev-ref HEAD) && git branch -r | sed -e 's/origin\\///g' | grep -v $B | grep -v HEAD | xargs -L 1 -I %  sh -c "'{ git checkout %; git pull --rebase; }'" && git checkout $B
 [color]
     ui = true
+[difftool "sourcetree"]
+        cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+        path =
+[merge]
+        tool = p4merge
+        keepBackup = false
+[mergetool "p4merge"]
+        cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+        keepTemporaries = false
+        trustExitCode = false
+        keepBackup = false
+[diff]
+        external = p4diff
+[mergetool "sourcetree"]
+        cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+        trustExitCode = true
+            
