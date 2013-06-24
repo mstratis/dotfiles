@@ -4,10 +4,10 @@ These are my dotfiles. Many of these settings work best with the OS X Homebrew t
 
 ##Setup
 
-Run this:
+Run this in your home directory:
 
 ```sh
-git clone https://github.com/hodgesmr/dotfiles.git ~/.dotfiles
+git clone https://github.com/mstratis/dotfiles.git ~/.dotfiles
 ruby ~/.dotfiles/script/setup.rb
 ```
 
@@ -23,4 +23,6 @@ Each managed file is symlinked to a corresponding file in `~/.dotfiles`. If you 
 
 ##A Matt Hodges project
 
-Made by [@hodgesmr](http://twitter.com/hodgesmr).
+Forked from https://github.com/hodgesmr
+
+Follow him [@hodgesmr](http://twitter.com/hodgesmr).
