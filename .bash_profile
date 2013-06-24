@@ -10,6 +10,7 @@ alias reporoot='cd $(git rev-parse --show-toplevel)'
 alias server='open http://localhost:8000 && python -m SimpleHTTPServer'
 alias autosave='/usr/local/lib/node_modules/autosave/bin/autosave'
 alias showHidden='ls -ld .??*'
+alias setupDotfiles='ruby ~/.dotfiles/script/setup.rb'
 
 # Git completion
 source ~/bin/git-completion.bash
