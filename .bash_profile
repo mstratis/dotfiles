@@ -10,6 +10,8 @@ alias reporoot='cd $(git rev-parse --show-toplevel)'
 alias server='open http://localhost:8000 && python -m SimpleHTTPServer'
 alias autosave='/usr/local/lib/node_modules/autosave/bin/autosave'
 alias showHidden='ls -ld .??*'
+alias finderShowHiddenFiles='defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder'
+alias finderHideHiddenFiles='defaults write com.apple.finder AppleShowAllFiles FALSE && killall Finder'
 alias setupDotfiles='ruby ~/.dotfiles/script/setup.rb'
 
 # Git completion
