@@ -5,6 +5,9 @@ export PS1="\[\033[0;37m\] \w \[\033[31m\]\`ruby -e \"print (%x{git branch 2> /d
 export PATH=/Users/mstratis/bin/Sencha/Cmd/3.0.0.250:$PATH
 export SENCHA_CMD_3_0_0="/Users/mstratis/bin/Sencha/Cmd/3.0.0.250"
 
+# Java (only works for Cardinal account)
+export JAVA_HOME=`/usr/libexec/java_home -v 1.6'
+
 # Aliases
 alias reporoot='cd $(git rev-parse --show-toplevel)'
 alias server='open http://localhost:8000 && python -m SimpleHTTPServer'
