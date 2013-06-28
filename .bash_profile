@@ -19,3 +19,5 @@ alias setupDotfiles='ruby ~/.dotfiles/script/setup.rb'
 
 # Git completion
 source ~/bin/git-completion.bash
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function* (Cardinal account)
