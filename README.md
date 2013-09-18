@@ -8,7 +8,8 @@ Run this in your home directory:
 
 ```sh
 git clone https://github.com/mstratis/dotfiles.git ~/.dotfiles
-ruby ~/.dotfiles/script/setup.rb
+cd ~/.dotfiles
+ruby script/setup.rb
 ```
 
 This will create symbolic links in your home directory to the dotfiles living in `~/.dotfiles` so that everything is set up nicely. Heads up: it is destructive. That means it will overwrite any of your current dotfiles or directories that have conflicting names.
