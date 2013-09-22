@@ -4,7 +4,7 @@
 	name = Mark Stratis
 	email = mstratis28@gmail.com
 [core]
-    excludesfile = ~/.gitignore_global
+	excludesfile = /Users/markstratis/.gitignore_global
 [alias]
 
   # shows all of the git aliases
@@ -39,8 +39,8 @@
 [color]
     ui = true
 [difftool "sourcetree"]
-        cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-        path =
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
 [merge]
         tool = p4merge
         keepBackup = false
@@ -52,6 +52,8 @@
 [diff]
         external = p4diff
 [mergetool "sourcetree"]
-        cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-        trustExitCode = true
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
             
+[push]
+	default = simple
